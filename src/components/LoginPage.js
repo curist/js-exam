@@ -10,6 +10,7 @@ class LoginPage extends React.Component {
     super(props);
     this.actions = this.props.actions;
     this.submitPassword = this.actions.submitPassword;
+    this.login = this.login.bind(this);
     this.state = { password: '', error: '' };
   }
   componentDidUpdate() {
@@ -17,10 +18,16 @@ class LoginPage extends React.Component {
       this.props.history.push('/js-exam');
     }
   }
+
+  login(e) {
+    e.preventDefault();
+    this.submitPassword(this.state.password);
+  }
+
   render() {
     return (
       <div className="login">
-        <form onSubmit={() => this.submitPassword(this.state.password)}>
+        <form onSubmit={this.login}>
           <div style={{display:'flex'}}>
             <Input
               placeholder="input the password to login"

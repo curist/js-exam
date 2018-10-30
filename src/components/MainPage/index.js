@@ -9,6 +9,10 @@ import AceEditor from 'react-ace';
 import { withRouter } from 'react-router-dom'
 import { Button } from 'antd';
 
+import { withAuthenticator } from 'aws-amplify-react';
+import Amplify from 'aws-amplify';
+import aws_exports from '../../aws-exports.js';
+
 import QuestionSelector from './QuestionSelector';
 import questions from '../../questions';
 import {
@@ -24,6 +28,8 @@ import debouncedRunCode from '../../utils/runCode';
 import Border from './Border';
 import Console from './Console';
 import createWrappedConsole from '../../utils/consoleFactory';
+
+Amplify.configure(aws_exports);
 
 class MainPage extends Component {
   constructor(props) {
@@ -164,7 +170,7 @@ class MainPage extends Component {
   }
 }
 
-export default withRouter(connect(
+export default withAuthenticator(withRouter(connect(
   state => {
     const { code : codeObj } = state ;
     const { index } = codeObj ;
@@ -188,4 +194,4 @@ export default withRouter(connect(
       }
     };
   }
-)(MainPage));
+)(MainPage)));

@@ -1,0 +1,9 @@
+{
+    "AppSyncApiName": "jsexam",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognitoa09652d3",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

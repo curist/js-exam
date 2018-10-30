@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/jsexam-20181030194010-deployment/amplify-cfn-templates/auth/cognitoa09652d3-cloudformation-template.yml",
 				"logicalId": "authcognitoa09652d3"
 			},
-			"lastPushTimeStamp": "2018-10-30T11:58:45.910Z",
+			"lastPushTimeStamp": "2018-10-30T12:07:41.814Z",
 			"output": {
 				"AppClientSecret": "cjcorr62k3ursoofmgqdp0nr5kear7mqpomctv38ub0ts0odnev",
 				"UserPoolId": "ap-northeast-1_GNbsDS1xu",
@@ -49,8 +49,26 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/jsexam-20181030194010-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apijsexam"
 			},
-			"lastPushTimeStamp": "2018-10-30T11:58:47.436Z",
+			"lastPushTimeStamp": "2018-10-30T12:07:41.815Z",
 			"lastPushDirHash": "ZmRjlYrrxRubj/Vn6K0WuaZiHR0="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/jsexam-20181030194010-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2018-10-30T12:07:41.818Z",
+			"output": {
+				"S3BucketSecureURL": "https://jsexam.s3.amazonaws.com",
+				"WebsiteURL": "http://jsexam.s3-website-ap-northeast-1.amazonaws.com",
+				"Region": "ap-northeast-1",
+				"HostingBucketName": "jsexam"
+			},
+			"lastPushDirHash": "ML0tYc5vMI7arYceipfILQV82TY="
 		}
 	}
 }

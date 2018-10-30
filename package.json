@@ -2,7 +2,6 @@
   "name": "js-exam",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jeno5980515.github.io/js-exam/",
   "devDependencies": {
     "react-scripts": "2.0.5"
   },

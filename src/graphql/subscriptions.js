@@ -32,6 +32,7 @@ export const onCreatePrivateNote = `subscription OnCreatePrivateNote {
   onCreatePrivateNote {
     id
     content
+    unixtime
   }
 }
 `;
@@ -39,6 +40,7 @@ export const onUpdatePrivateNote = `subscription OnUpdatePrivateNote {
   onUpdatePrivateNote {
     id
     content
+    unixtime
   }
 }
 `;
@@ -46,6 +48,7 @@ export const onDeletePrivateNote = `subscription OnDeletePrivateNote {
   onDeletePrivateNote {
     id
     content
+    unixtime
   }
 }
 `;

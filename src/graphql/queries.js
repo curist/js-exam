@@ -30,6 +30,7 @@ export const getPrivateNote = `query GetPrivateNote($id: ID!) {
   getPrivateNote(id: $id) {
     id
     content
+    unixtime
   }
 }
 `;
@@ -42,6 +43,7 @@ export const listPrivateNotes = `query ListPrivateNotes(
     items {
       id
       content
+      unixtime
     }
     nextToken
   }

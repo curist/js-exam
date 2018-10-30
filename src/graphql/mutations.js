@@ -32,6 +32,7 @@ export const createPrivateNote = `mutation CreatePrivateNote($input: CreatePriva
   createPrivateNote(input: $input) {
     id
     content
+    unixtime
   }
 }
 `;
@@ -39,6 +40,7 @@ export const updatePrivateNote = `mutation UpdatePrivateNote($input: UpdatePriva
   updatePrivateNote(input: $input) {
     id
     content
+    unixtime
   }
 }
 `;
@@ -46,6 +48,7 @@ export const deletePrivateNote = `mutation DeletePrivateNote($input: DeletePriva
   deletePrivateNote(input: $input) {
     id
     content
+    unixtime
   }
 }
 `;

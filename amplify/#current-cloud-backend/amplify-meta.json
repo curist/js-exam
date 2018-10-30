@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/jsexam-20181030194010-deployment/amplify-cfn-templates/auth/cognitoa09652d3-cloudformation-template.yml",
 				"logicalId": "authcognitoa09652d3"
 			},
-			"lastPushTimeStamp": "2018-10-30T11:47:46.023Z",
+			"lastPushTimeStamp": "2018-10-30T11:58:45.910Z",
 			"output": {
 				"AppClientSecret": "cjcorr62k3ursoofmgqdp0nr5kear7mqpomctv38ub0ts0odnev",
 				"UserPoolId": "ap-northeast-1_GNbsDS1xu",
@@ -49,8 +49,8 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/jsexam-20181030194010-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apijsexam"
 			},
-			"lastPushTimeStamp": "2018-10-30T11:47:46.023Z",
-			"lastPushDirHash": "UIkRN/UhTzzKC+5L7GoM+b4upNs="
+			"lastPushTimeStamp": "2018-10-30T11:58:47.436Z",
+			"lastPushDirHash": "ZmRjlYrrxRubj/Vn6K0WuaZiHR0="
 		}
 	}
 }

@@ -8,6 +8,7 @@ type Task {
 type PrivateNote {
   id: ID!
   content: String!
+  unixtime: Int!
 }
 
 type Candidate {
@@ -179,6 +180,7 @@ type ModelPrivateNoteConnection {
 input ModelPrivateNoteFilterInput {
   id: ModelIDFilterInput
   content: ModelStringFilterInput
+  unixtime: ModelIntFilterInput
   and: [ModelPrivateNoteFilterInput]
   or: [ModelPrivateNoteFilterInput]
   not: ModelPrivateNoteFilterInput
@@ -186,11 +188,13 @@ input ModelPrivateNoteFilterInput {
 
 input CreatePrivateNoteInput {
   content: String!
+  unixtime: Int!
 }
 
 input UpdatePrivateNoteInput {
   id: ID!
   content: String
+  unixtime: Int
 }
 
 input DeletePrivateNoteInput {

@@ -16,6 +16,7 @@ type PrivateNote
 {
   id: ID!
   content: String!
+  unixtime: Int!
 }
 
 type Candidate @model {

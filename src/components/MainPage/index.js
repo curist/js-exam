@@ -9,10 +9,6 @@ import AceEditor from 'react-ace';
 import { withRouter } from 'react-router-dom'
 import { Button } from 'antd';
 
-import { withAuthenticator } from 'aws-amplify-react';
-import Amplify from 'aws-amplify';
-import aws_exports from '../../aws-exports.js';
-
 import QuestionSelector from './QuestionSelector';
 import questions from '../../questions';
 import {
@@ -29,7 +25,15 @@ import Border from './Border';
 import Console from './Console';
 import createWrappedConsole from '../../utils/consoleFactory';
 
-Amplify.configure(aws_exports);
+import { Authenticator } from 'aws-amplify-react';
+import { Auth } from 'aws-amplify';
+
+const SignOut = ({ onStateChange }) => {
+  return <Button onClick={async () => {
+    await Auth.signOut();
+    onStateChange('signedOut');
+  }}>sign out</Button>;
+};
 
 class MainPage extends Component {
   constructor(props) {
@@ -106,6 +110,8 @@ class MainPage extends Component {
   }
 
   render() {
+
+    Auth.currentSession().then(data => console.log(data))
     const { rawCode , index } = this.props;
     return (
       <div className="App">
@@ -148,6 +154,9 @@ class MainPage extends Component {
                 activeIndex={index}
               />
               <Button type="danger" onClick={(this.resetQuestion)}>Reset</Button>
+              <Authenticator>
+                <SignOut />
+              </Authenticator>
               {!this.state.SyntaxError
                 ? null
                 : <div className="syntax-error">
@@ -170,7 +179,7 @@ class MainPage extends Component {
   }
 }
 
-export default withAuthenticator(withRouter(connect(
+export default withRouter(connect(
   state => {
     const { code : codeObj } = state ;
     const { index } = codeObj ;
@@ -194,4 +203,4 @@ export default withAuthenticator(withRouter(connect(
       }
     };
   }
-)(MainPage)));
+)(MainPage));

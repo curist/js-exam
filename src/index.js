@@ -8,6 +8,10 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducer from "./reducers";
 
+import Amplify from 'aws-amplify';
+import aws_exports from './aws-exports.js';
+Amplify.configure(aws_exports);
+
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

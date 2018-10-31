@@ -7,6 +7,7 @@ import {
 
 import MainPage from './components/MainPage/';
 import LoginPage from './components/LoginPage';
+import { withAuthenticator } from 'aws-amplify-react';
 
 const App = () => (
   <Router>
@@ -18,4 +19,4 @@ const App = () => (
   </Router>
 )
 
-export default App;
+export default withAuthenticator(App);
